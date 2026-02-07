@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "game_url": "https://example.com/math-game",
+  "elapsed_time": 45.32,
+  "timestamp": 1707318000.0,
+  "phases": {
+    "exploration": {
+      "game_type": "math_game",
+      "elements_discovered": 23,
+      "game_controls": 5
+    },
+    "strategy": {
+      "strategy_type": "math_game",
+      "test_sequence_length": 12
+    },
+    "execution": {
+      "total_actions": 12,
+      "successful_actions": 10,
+      "success_rate": 0.833
+    },
+    "validation": {
+      "health_score": 85.5,
+      "anomalies": 1
+    },
+    "learning": {
+      "patterns_learned": 3,
+      "total_patterns": 47
+    }
+  },
+  "summary": {
+    "overall_success_rate": 0.833,
+    "health_score": 85.5,
+    "game_type": "math_game",
+    "recommendation": "Game is functioning well. All tests passed successfully."
+  }
+}

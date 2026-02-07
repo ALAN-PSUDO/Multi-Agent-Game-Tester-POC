@@ -1,0 +1,88 @@
+# Example Configuration for Testing Math Games
+# This is an example configuration optimized for math game testing
+
+# Browser Settings (32-bit Windows compatible)
+browser:
+  type: "chrome"
+  headless: false  # Set to true for automated environments
+  window_size: "1280x720"
+  implicit_wait: 10
+  page_load_timeout: 30
+  
+  # 32-bit specific settings
+  architecture: "32-bit"
+  driver_path: null  # Auto-detect
+
+# Agent Configuration
+agents:
+  exploration:
+    enabled: true
+    max_depth: 5
+    timeout: 60
+    
+  strategy:
+    enabled: true
+    learning_rate: 0.15  # Higher learning rate for faster adaptation
+    exploration_factor: 0.3  # More exploration
+    
+  execution:
+    enabled: true
+    max_retries: 5  # More retries for stability
+    action_delay: 1.0  # Longer delay for game processing
+    
+  validation:
+    enabled: true
+    screenshot_on_error: true
+    log_level: "DEBUG"  # More detailed logging
+
+# Game Testing Configuration
+game_testing:
+  target_urls: 
+    - "https://www.mathplayground.com/"
+    - "https://www.coolmathgames.com/"
+  test_duration: 600  # 10 minutes
+  max_interactions: 150  # More interactions for thorough testing
+  
+# DOM Analysis Settings
+dom_analysis:
+  interactive_elements:
+    - "button"
+    - "input"
+    - "a"
+    - "select"
+    - "textarea"
+    - "canvas"
+    - "div"  # Some games use div elements for interactions
+  
+  ignore_elements:
+    - "script"
+    - "style"
+    - "meta"
+    - "link"
+  
+  attribute_priority:
+    - "id"
+    - "class"
+    - "name"
+    - "data-testid"
+    - "role"
+    - "aria-label"
+
+# Heuristic Learning
+heuristics:
+  enabled: true
+  save_patterns: true
+  pattern_storage: "math_game_heuristics.json"
+  min_confidence: 0.5  # Lower threshold to learn more patterns
+  
+# Logging
+logging:
+  level: "DEBUG"
+  file: "math_game_tester.log"
+  console: true
+  
+# Reporting
+reporting:
+  format: "html"  # Visual reports for math games
+  output_dir: "math_game_reports"
+  include_screenshots: true
