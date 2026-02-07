@@ -1,0 +1,83 @@
+# Multi-Agent Game Testing System Configuration
+
+# Browser Settings (32-bit Windows compatible)
+browser:
+  type: "chrome"  # chrome, firefox, edge
+  headless: false
+  window_size: "1280x720"
+  implicit_wait: 10
+  page_load_timeout: 30
+  
+  # 32-bit specific settings
+  architecture: "32-bit"
+  driver_path: null  # Auto-detect if null
+
+# Agent Configuration
+agents:
+  exploration:
+    enabled: true
+    max_depth: 5
+    timeout: 60
+    
+  strategy:
+    enabled: true
+    learning_rate: 0.1
+    exploration_factor: 0.2
+    
+  execution:
+    enabled: true
+    max_retries: 3
+    action_delay: 0.5
+    
+  validation:
+    enabled: true
+    screenshot_on_error: true
+    log_level: "INFO"
+
+# Game Testing Configuration
+game_testing:
+  target_urls: []  # Will be provided at runtime
+  test_duration: 300  # seconds
+  max_interactions: 100
+  
+# DOM Analysis Settings
+dom_analysis:
+  interactive_elements:
+    - "button"
+    - "input"
+    - "a"
+    - "select"
+    - "textarea"
+    - "canvas"
+  
+  ignore_elements:
+    - "script"
+    - "style"
+    - "meta"
+    - "link"
+  
+  attribute_priority:
+    - "id"
+    - "class"
+    - "name"
+    - "data-testid"
+    - "role"
+
+# Heuristic Learning
+heuristics:
+  enabled: true
+  save_patterns: true
+  pattern_storage: "heuristics.json"
+  min_confidence: 0.6
+  
+# Logging
+logging:
+  level: "INFO"
+  file: "game_tester.log"
+  console: true
+  
+# Reporting
+reporting:
+  format: "json"  # json, html, text
+  output_dir: "reports"
+  include_screenshots: true
