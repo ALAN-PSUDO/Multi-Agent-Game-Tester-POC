@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multi-Agent Game Tester</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+</head>
+<body>
+  <div class="container">
+    <h1>Multi-Agent Game Tester</h1>
+    <p class="subtitle">Simple POC for puzzle game testing.</p>
+
+    <div class="panel">
+      <label for="url">Target URL</label>
+      <input id="url" type="text" value="https://play.ezygamers.com/" />
+      <button id="planBtn">Generate Plan</button>
+      <button id="runBtn">Run Top 10</button>
+      <div id="status" class="status">Idle</div>
+    </div>
+
+    <div class="panel">
+      <h2>Plan Preview</h2>
+      <pre id="planOutput">No plan generated yet.</pre>
+    </div>
+
+    <div class="panel">
+      <h2>Latest Report</h2>
+      <div id="reportOutput">No report yet.</div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
